@@ -1,0 +1,8 @@
+{
+  "name": "Telegram Bot: Python",
+  "description": "A Telegram bot that works using Python",
+  "image": "heroku/python",
+  "repository": "https://github.com/mokshm/telegramBot",
+  "keywords": ["python"],
+  "addons": [ "heroku-postgresql" ]
+}
