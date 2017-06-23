@@ -42,7 +42,7 @@ general_handler = MessageHandler(Filters.text,general);
 disp.add_handler(general_handler);
 PORT = int(os.environ.get('PORT','5000'));
 upd.start_webhook(listen="0.0.0.0",
-		  port=PORT,
+		  port=80,
 		  url_path=ttoken);
 upd.bot.set_webhook("https://mysterious-brook-69841.herokuapp.com/"+ttoken);
 upd.idle();
