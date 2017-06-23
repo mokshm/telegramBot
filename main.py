@@ -1,5 +1,7 @@
 import re
 import logging
+import os
+
 welcome_msg = '''Hi, My name is ZeroSurfer and I am a bot. Moksh Makhija is my father. I am in alpha phase right now. Can you suggest me something that I'm able to do in the near future? I'm looking for suggestions :) Suggest me with a message starting with @suggest.''';
 suggests_pass = "oneplus5";
 suggest_msg = "Thank you. I will discuss your idea with my father and will try to learn it";
@@ -38,4 +40,10 @@ def general(bot,update):
 ######general function ends######
 general_handler = MessageHandler(Filters.text,general);
 disp.add_handler(general_handler);
-upd.start_polling();
+PORT = int(os.environ.get('PORT','5000'));
+upd.start_webhook(listen="0.0.0.0",
+		  port=PORT,
+		  url_path=ttoken);
+upd.bot.set_webhook("https://mysterious-brook-69841.herokuapp.com/"+ttoken);
+upd.idle();
+#upd.start_polling();
